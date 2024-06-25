@@ -1,0 +1,49 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(249, 55, 132);
+
+}
+
+.container {
+    text-align: center;
+}
+
+button {
+    background-color: rgb(84, 255, 255);
+    font-size: 24px;
+    padding: 15px 30px;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+#noButton {
+    animation: moveRandom 5s infinite linear; /* Animación para mover el botón "No" */
+}
+
+h1{
+
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@keyframes moveRandom {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(50px, 50px);
+    }
+    50% {
+        transform: translate(-50px, -50px);
+    }
+    75% {
+        transform: translate(50px, -50px);
+    }
+    100% {
+        transform: translate(-50px, 50px);
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let edad1;
+        let edad2;
+        let edad3;
+        let prom;
+        let suma;
+        let anoNacio1=2000;
+        let anoNacio2=2006;
+        let anoNacio3=2009;
+        let anoActu=2024;
+
+        edad1=anoActu-anoNacio1;
+        edad2=anoActu-anoNacio2;
+        edad3=anoActu-anoNacio3;
+
+        if(edad1>17){
+            console.log("Es mayor de edad");
+        }else{
+            console.log("Es menor de edad");
+        }
+        if(edad2>17){
+            console.log("Es mayor de edad");
+        }else{
+            console.log("Es menor de edad");
+        }
+        if(edad3>17){
+            console.log("Es mayor de edad");
+        }else{
+            console.log("Es menor de edad");
+        }
+
+        suma=edad1+edad2+edad3;
+        prom=suma/3;
+
+        if(prom>17){
+            console.log("El promedio de las tres edades es ="+prom+" y cumple con la mayoria de edad");
+        }else{
+            console.log("El promedio no cumple con la mayoria de edad");
+        }
+    </script>
+</body>
+</html>

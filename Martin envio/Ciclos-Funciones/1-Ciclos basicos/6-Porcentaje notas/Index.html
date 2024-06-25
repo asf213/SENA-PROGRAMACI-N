@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porcentaje y promedio de 3 notas</title>
+    <script src="./js/porcentajeNotas.js"></script>
+</head>
+<body>
+    <script>
+        let suma;
+
+        console.log("El porcentaje de la primera nota en PARAMETRO ES:  " +porcentaje(3.5,0.03));
+        console.log("El porcentaje de la segunda nota en PARAMETRO ES:  " +porcentaje(2.4,0.03));
+        console.log("El porcentaje de la tercera nota en PARAMETRO ES: " +porcentaje(2.5,0.04));
+        suma = 3.5*0.03 + 2.4*0.03 + 2.5*0.04;
+        console.log("La suma de los porcentajes de las tres notas en PARAMETRO ES:  "+suma);
+
+        console.log("-------------------------------------------------------------")
+
+        console.log("El porcentaje de la primera nota en EXPRESIÓN ES:  " +porcentajeExp(4.3,0.03));
+        console.log("El porcentaje de la segunda nota en EXPRESIÓN ES:" +porcentajeExp(3.5,0.03));
+        console.log("El porcentaje de la tercera nota en EXPRESIÓN ES:" +porcentajeExp(2.4,0.04));
+        suma = 4.3*0.03 + 3.5*0.03 + 2.4*0.04;
+        console.log("La suma de los porcentajes de las tres notas en EXPRESIÓN ES: "+suma);
+    </script>
+</body>
+</html>

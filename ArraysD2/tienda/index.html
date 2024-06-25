@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Nomina</title>
+</head>
+
+<body>
+    <script>
+
+        let tienda = [
+            { producto: "arroz", tipoProducto: "grano", tipoUnidad: "gramos", cantidad: 1000, precio: 2450 },
+            { producto: "Papa", tipoProducto: "fruver", tipoUnidad: "gramos", cantidad: 1000, precio: 2450 },
+            { producto: "Mora", tipoProducto: "fruver", tipoUnidad: "gramos", cantidad: 1000, precio: 2450 },
+            { producto: "Trucha", tipoProducto: "carne", tipoUnidad: "gramos", cantidad: 1000, precio: 2450 },
+            { producto: "PolloEntero", tipoProducto: "carne", tipoUnidad: "gramos", cantidad: 1000, precio: 2450 }
+        ];
+            
+        let listaRegistros = [];
+        let nuevoProducto = { producto: "Carne entera", tipoProducto: "carne", tipoUnidad: "gramos", cantidad: 1000, precio: 2450 };
+        tienda.push(nuevoProducto);
+        let numeroRegistros = tienda.length;
+
+
+        for (let iteracion = 0; iteracion < numeroRegistros; iteracion++) {
+           // console.log(tienda[iteracion])
+            if (tienda[iteracion].tipoProducto === "fruver") {
+                listaRegistros.push(tienda[iteracion]);
+            } else {
+                console.log("")
+            }
+        }
+        console.log("Consulta:");
+        console.log(listaRegistros);
+
+        
+        console.log("Precio Modificado:");
+        let productoAModificar = "Mora"; 
+        let nuevoPrecio = 3400; 
+        let nuevoTipoDeUnidad = "Kilogramos";
+
+        for (let iteracion= 0; iteracion < listaRegistros.length; iteracion++) {
+            if (listaRegistros[iteracion].producto === productoAModificar) {
+                listaRegistros[iteracion].precio = nuevoPrecio;
+                listaRegistros[iteracion].tipoProducto = nuevoTipoDeUnidad;
+                break; 
+            }
+        }
+
+        console.log("Lista de registros actualizada:");
+        console.log(tienda);
+    </script>
+
+</body>
+
+</html>

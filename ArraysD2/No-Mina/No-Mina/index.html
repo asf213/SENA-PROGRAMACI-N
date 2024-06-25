@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nomina</title>
+  </head>
+
+  <body>
+    <script>
+      let mostrar;
+      let salarioMin = 1600000;
+      let registros = []; //el array principal
+      let nomina = [];
+      let numeroRegistros;
+      let mostrarRetencion;
+
+      const salario = function (pvalordia, pDias) {
+        return pDias * pvalordia;
+      };
+
+      const subTrans = function (psalario) {
+        if (psalario < salarioMin * 2) {
+          psalario = psalario + 120000;
+          mostrar = "Se le aplica el subsidio " + psalario;
+        } else {
+          psalario = psalario + 0;
+          mostrar = "No se le aplica el subsidio " + psalario;
+        }
+        return mostrar;
+      };
+
+      const salud = function (psalario) {
+        return psalario * 0.08;
+      };
+
+      const pension = function (psalario) {
+        return psalario * 0.12;
+      };
+
+      const arl = function (psalario) {
+        return psalario * 0.05;
+      };
+
+      const deducible = function (psalario) {
+        return salud(psalario) + pension(psalario) + arl(psalario);
+      };
+
+      const retener = function (psalario) {
+        let mostrarRetencion;
+
+        if (psalario > salarioMin * 12) {
+          psalario = psalario * 0.08;
+          mostrarRetencion = "Retencion de 0.08 " + psalario;
+        } else if (psalario > salarioMin * 8) {
+          psalario = psalario * 0.04;
+          mostrarRetencion = "Retencion de 0.04 " + psalario;
+        } else if (psalario > salarioMin * 6) {
+          psalario = psalario * 0.02;
+          mostrarRetencion = "Retencion de 0.02 " + psalario;
+        } else {
+          mostrarRetencion = "No aplica retención";
+        }
+
+        return mostrarRetencion;
+      };
+
+      const total = function (psalario) {
+        return psalario - deducible(psalario);
+      };
+
+        registros = [
+            {id:2087263498 , nombre:'Luis', apellido:'García',cargo:'Gerente',valorDia:60000 ,diasTrabajado:25 },
+            {id:1789346523 , nombre:'Ana', apellido:'Ramírez',cargo:'Empleado',valorDia: 750000 ,diasTrabajado: 35 },
+            {id:1345876921 , nombre:'Pedro', apellido:'Martínez',cargo:'Contador',valorDia:40000 ,diasTrabajado:55  },
+            {id:1452398765 , nombre:'María', apellido:'López',cargo:'Instructor',valorDia: 45000 ,diasTrabajado:70  },
+            {id:1654321876 , nombre:'Juan', apellido:'Gómez',cargo:'Doctor',valorDia: 11000 ,diasTrabajado: 60 },
+            {id:1876543219, nombre:'Elena', apellido:'Fernández',cargo:'Bombero',valorDia:48000  ,diasTrabajado: 85 },
+            {id:1978654320 , nombre:'Javier', apellido:'Hernández',cargo:'Obrero',valorDia: 125000 ,diasTrabajado:80  },
+            {id:1345678901 , nombre:'Laura', apellido:'Pérez',cargo:'Soldador',valorDia: 310000 ,diasTrabajado: 15 },
+            {id:1543209876, nombre:'Roberto', apellido:'Sánchez',cargo:'Profesor',valorDia:1320000  ,diasTrabajado:30  },
+            {id:1423567890 , nombre:'Camila', apellido:'Torres',cargo:'Empleado',valorDia:3580000  ,diasTrabajado: 50 }
+        ];
+
+      numeroRegistros = registros.length;
+
+      for (let i = 0; i < numeroRegistros; i++) {
+        let trabajador = registros[i];
+        let salarioC = salario(trabajador.valorDia, trabajador.diasTrabajado);
+        let subTransC = subTrans(salarioC);
+        let retencionC = retener(salarioC);
+        let saludC = salud(salarioC);
+        let pensionC = pension(salarioC);
+        let arlC = arl(salarioC);
+        let deducibleC = deducible(salarioC);
+        let totalC = total(salarioC);
+
+        nomina.push({
+          id: trabajador.id,
+          nombre: trabajador.nombre,
+          apellido: trabajador.apellido,
+          cargo: trabajador.cargo,
+          salario: salarioC,
+          subTransporte: subTransC,
+          retencion: retencionC,
+          salud: saludC,
+          pension: pensionC,
+          arl: arlC,
+          deducible: deducibleC,
+          total: totalC,
+        });
+      }
+
+      console.log(nomina);
+    </script>
+  </body>
+</html>

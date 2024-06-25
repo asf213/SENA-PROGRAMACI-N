@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porcentajes de 3 notas y su respectiva asignacion</title>
+</head>
+<body>
+    <script>
+        let nota1=3.5;
+        let nota2=2.4;
+        let nota3=4.6;
+        let porc1;
+        let porc2;
+        let porc3;
+        let suma;
+
+        porc1=nota1*(20/100);
+        porc2=nota2*(35/100);
+        porc3=nota3*(45/100);
+
+        console.log("Porcentaje de la nota 1 es "+porc1+"\n");
+        console.log("Porcentaje de la nota 2 es "+porc2+"\n");
+        console.log("Porcentaje de la nota 3 es "+porc3+"\n");
+
+        suma=porc1+porc2+porc3;
+
+        console.log("La suma de los porcentajes es "+suma);
+
+        if(suma>4.5){
+            console.log("La nota es superior");
+        }else{
+            if(suma>3.5){
+                console.log("La nota es buena");
+            }else{
+                if(suma>3){
+                    console.log("La nota es media");
+                }else{
+                    console.log("La nota es mala");
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
